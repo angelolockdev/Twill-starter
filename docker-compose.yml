@@ -1,0 +1,47 @@
+version: "3"
+
+services:
+  # The Application
+  app:
+    container_name: twill-laravel-app
+    working_dir: /var/www
+    build:
+      context: ./
+      dockerfile: app.dockerfile
+    volumes:
+      - ./:/var/www
+      - ./config/php:/usr/local/etc/php/php.ini
+    environment:
+      - "DB_PORT=3306"
+      - "DB_HOST=database"
+    restart: always
+    
+    
+  
+  #The Web Server
+  web: 
+    build:
+      context: ./
+      dockerfile: web.dockerfile
+    working_dir: /var/www 
+    volumes:
+      - ./:/var/www   
+    ports:
+      - "80:80"
+    restart: always
+
+  #The Database
+  database:
+    image: mysql:5.7.24
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      - "MYSQL_DATABASE=twill_starter"
+      - "MYSQL_USER=root" 
+      - "MYSQL_ROOT_PASSWORD=secret"
+    ports:
+      - "33061:3306"
+    restart: always
+
+volumes:
+  db_data:
