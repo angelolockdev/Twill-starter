@@ -7,14 +7,8 @@
         'translated' => true,
         'maxlength' => 100
     ])
-    @formField('medias', [
+    @formField('medias',[
         'name' => 'hero_image',
-        'label' => 'Hero_image',
+        'label' => 'Hero image',
     ])
-    
-    @formField('block_editor', [
-        'blocks' => [
-            'gallery', 'image_with_text', 'quote', 'paragraph'
-        ]
-    ]);
 @stop
