@@ -18,4 +18,9 @@ class ArticleRepository extends ModuleRepository
     {
         $this->model = $model;
     }
+
+    public function afterSave($object , $fields){
+        $this->updateBrowser($object, $fields, 'invitees');
+        parent::afterSave($object, $fields);
+    }
 }

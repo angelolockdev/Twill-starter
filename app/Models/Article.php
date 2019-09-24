@@ -17,6 +17,15 @@ class Article extends Model
         'published', 
     ];
 
+    public function invitees(){
+        return $this->belongsToMany(\App\Models\Invitee::class);
+    }
+
+    public function getFormFields($object){
+        $fields = parent::getFormFields($object);
+        $fields['browsers']['invitees'] = $this->getFirmFiedsForBrowser($object, 'invitees');
+    }
+
     // uncomment and modify this as needed if you use the HasTranslation trait
     public $translatedAttributes = [
         'title',

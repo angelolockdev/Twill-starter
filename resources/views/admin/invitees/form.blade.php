@@ -12,4 +12,10 @@
         'name' => 'profile' ,
         'label' => 'Profile picture',
     ])
+    @formField('browser' ,[
+        'moduleName' => 'invitees' ,
+        'name' => 'invitees',
+        'label' => 'invitees',
+        'max' => 2,
+    ])
 @stop
