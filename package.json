@@ -8,13 +8,9 @@
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "twill-build": "rm -f public/hot && npm run twill-copy-blocks && cd vendor/area17/twill && npm ci && npm run prod && cp -R public/* ${INIT_CWD}/public",
-        "twill-copy-blocks": "npm run twill-clean-blocks && mkdir -p resources/assets/js/blocks/* && cp -R resources/assets/js/blocks/* vendor/area17/twill/frontend/js/components/blocks/customs/",
-        "twill-clean-blocks": "rm -rf vendor/area17/twill/frontend/js/components/blocks/customs/*",
-        "twill-dev": "mkdir -p vendor/area17/twill/public && npm run twill-copy-blocks && concurrently \"cd vendor/area17/twill && npm ci && npm run hot\" \"npm run twill-watch\" && npm run twill-clean-blocks",
-        "twill-watch": "concurrently \"watch 'npm run twill-hot' vendor/area17/twill/public --wait=2 --interval=0.1\" \"npm run twill-watch-blocks\"",
-        "twill-hot": "cd vendor/area17/twill && cp -R public/* ${INIT_CWD}/public",
-        "twill-watch-blocks": "watch 'npm run twill-copy-blocks' resources/assets/js/blocks/* --wait=2 --interval=0.1"
+        "twill-build": "npm run twill-copy-blocks && cd vendor/area17/twill && npm ci && npm run prod && cp -R public/* ${INIT_CWD}/public",
+        "twill-copy-blocks": "npm run twill-clean-blocks && mkdir -p resources/assets/js/blocks/ && cp -R resources/assets/js/blocks/* vendor/area17/twill/frontend/js/components/blocks/customs/",
+        "twill-clean-blocks": "rm -rf vendor/area17/twill/frontend/js/components/blocks/customs/*" 
     },
     "devDependencies": {
         "concurrently": "^3.5.1",

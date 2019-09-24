@@ -1,5 +1,4 @@
 <?php
-
 return [
     'block_editor' => [
         'block_single_layout' => 'layouts.block',

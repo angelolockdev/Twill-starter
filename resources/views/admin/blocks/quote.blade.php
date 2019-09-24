@@ -2,7 +2,7 @@
     'translated' => true,
     'name' => 'quote',
     'label' => 'Quote (translated)',
-    'maxlength' => 250,
+    'maxlength' => 300,
     'required' => true,
     'type' => 'textarea',
     'rows' => 3
