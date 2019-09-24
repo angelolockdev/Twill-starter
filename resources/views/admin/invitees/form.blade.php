@@ -12,7 +12,7 @@
         'name' => 'profile' ,
         'label' => 'Profile picture',
     ])
-    @formField('browser' ,[
+    @formField('browser' ,[ 
         'moduleName' => 'invitees' ,
         'name' => 'invitees',
         'label' => 'invitees',
