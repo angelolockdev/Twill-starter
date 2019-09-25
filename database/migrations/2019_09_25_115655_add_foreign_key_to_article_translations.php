@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddForeignKeyForArticleRef extends Migration
+class AddForeignKeyToArticleTranslations extends Migration
 {
     /**
      * Run the migrations.
@@ -14,9 +14,10 @@ class AddForeignKeyForArticleRef extends Migration
     public function up()
     {
         Schema::table('article_translations', function (Blueprint $table) {
-            createDefaultRelationshipTableFields($table, 'article', 'article');
-          //  $table->foreign('ref_article_id')->references('id')->on('article_translations')->onDelete('cascade');
-        }); 
+            $table->foreign('ref_article_id')
+            ->references('id')->on('article_translations')
+            ->onDelete('set null');
+        });
     }
 
     /**
