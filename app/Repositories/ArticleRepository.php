@@ -23,4 +23,10 @@ class ArticleRepository extends ModuleRepository
         $this->updateBrowser($object, $fields, 'invitees');
         parent::afterSave($object, $fields);
     }
+
+    public function getFormFields($object){
+        $fields = parent::getFormFields($object);
+        $fields['browsers']['invitees'] = $this->getFormFieldsForBrowser($object, 'invitees');
+        return $fields;
+    }
 }

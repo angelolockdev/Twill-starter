@@ -23,6 +23,11 @@ return [
                 'icon' => 'text',
                 'component' => 'a17-block-paragraph',
             ],
+            'my_awesome_block' => [
+                'title' => 'Title for my awesome block',
+                'icon' => 'text',
+                'component' => 'a17-block-my_awesome_block',
+            ],
         ],
         'crops' => [
             'cover' => [

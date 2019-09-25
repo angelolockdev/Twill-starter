@@ -18,7 +18,7 @@ class CreateInviteesTables extends Migration
             createDefaultTranslationsTableFields($table, 'invitee');
             // add some translated fields
             $table->string('title')->nullable();
-            $table->text('bio')->nullable();
+            $table->text('bio');
         });
 
         // remove this if you're not going to use slugs, ie. using the HasSlug trait

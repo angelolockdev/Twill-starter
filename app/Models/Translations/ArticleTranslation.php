@@ -8,6 +8,8 @@ class ArticleTranslation extends Model
 {
     protected $fillable = [
         'title',
+        'subtitle',
+        'price',
         'description',
         'active',
         'locale',
