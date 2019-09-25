@@ -20,17 +20,11 @@ class Article extends Model
     public function invitees(){
         return $this->belongsToMany(\App\Models\Invitee::class);
     }
-    public function articles(){
-        return $this->belongsToMany(\App\Models\Article::class);
-    }
-
   
 
     // uncomment and modify this as needed if you use the HasTranslation trait
     public $translatedAttributes = [
-        'title',
-        'subtitle', 
-        'price',
+        'title', 
         'description', 
     ];
     

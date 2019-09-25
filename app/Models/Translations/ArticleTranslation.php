@@ -7,9 +7,7 @@ use A17\Twill\Models\Model;
 class ArticleTranslation extends Model
 {
     protected $fillable = [
-        'title',
-        'subtitle',
-        'price',
+        'title', 
         'description',
         'active',
         'locale',
